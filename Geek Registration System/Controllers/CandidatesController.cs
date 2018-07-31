@@ -33,13 +33,18 @@ namespace Geek_Registration_System.Controllers
 
 
 
-
+        //search function
         [HttpPost]
         public ActionResult SearchCandidate(int[] skills)
         {
-
-
             var candidates = db.Candidates.Include(i => i.Skills).ToList();
+
+            if (skills == null)
+            {
+
+                return PartialView("_SearchResultView", candidates.ToList());
+            }
+
             var candidatesTmp = db.Candidates.Include(i => i.Skills).ToList();
             for (int k = 0; k < candidates.Count(); k++)
 

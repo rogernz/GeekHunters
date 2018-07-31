@@ -12,7 +12,8 @@ namespace Geek_Registration_System.Models
         public GRSDBContext()
         : base("GRSDBContext")
         {
-            Database.SetInitializer<Geek_Registration_System.Models.GRSDBContext>(null);
+            //open or close the initializer function
+            //Database.SetInitializer<Geek_Registration_System.Models.GRSDBContext>(null);
         }
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<Skill> Skills { get; set; }

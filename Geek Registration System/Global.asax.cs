@@ -19,6 +19,7 @@ namespace Geek_Registration_System
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+
             Database.SetInitializer(new DataInitializer());
             GRSDBContext db = new GRSDBContext();
             db.Database.Initialize(true);

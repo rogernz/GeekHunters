@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace Geek_Registration_System.Models
 {
-    public class DataInitializer : System.Data.Entity.DropCreateDatabaseAlways<GRSDBContext>
+    public class DataInitializer : DropCreateDatabaseAlways<GRSDBContext>
     {
         protected override void Seed(GRSDBContext context)
         {
@@ -58,6 +58,7 @@ namespace Geek_Registration_System.Models
                 context.Entry(skillToUpdate).State = EntityState.Modified;
                 context.SaveChanges();
             }
+            base.Seed(context);
 
         }
     }
