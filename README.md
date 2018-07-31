@@ -1,16 +1,17 @@
 # Geek Hunters
 
 Something I used.
-Local db mdf file instead of sqlite, because, I use visual studio 2017, and the IDE doesn't have offical SQLite
+
+--Local db mdf file instead of sqlite, because, I use visual studio 2017, and the IDE doesn't have offical SQLite
 DDEX provider package.
 
-Entity Framework code first patten.
+--Entity Framework code first patten.
 
-Seeding default data at DataInitializer.cs to initialize the database calling in  Global.asax file.
+--Seeding default data at DataInitializer.cs to initialize the database calling in  Global.asax file.
 
-Using Ajax helper with razor partial view to implement filter function.
+--Using Ajax helper with razor partial view to implement filter function.
 
-Adding two simple UT cases.
+--Adding two simple UT cases.
 
 Roger.
 
