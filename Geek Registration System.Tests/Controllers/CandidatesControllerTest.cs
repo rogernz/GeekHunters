@@ -31,7 +31,7 @@ namespace Geek_Registration_System.Tests.Controllers
         GRSDBContext db = null;
         public CandidatesControllerTest()
         {
-            var controller = new CandidatesController();
+            controller = new CandidatesController();
             db = controller.db;
         }
         [TestMethod]
