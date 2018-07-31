@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Geek_Registration_System.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +18,10 @@ namespace Geek_Registration_System
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            Database.SetInitializer(new DataInitializer());
+            GRSDBContext db = new GRSDBContext();
+            db.Database.Initialize(true);
         }
     }
 }

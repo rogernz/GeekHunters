@@ -1,0 +1,12 @@
+﻿<form action="@Url.Action("Filter","Candidates")" method="post">
+    <!-- Iterate through each of your Products -->
+    @foreach (var skill in ViewBag.DBSkills)
+    {
+        <!-- Output the name of the Product and a Checkbox (notice the name property) -->
+        @skill.Name <input type="checkbox" id="@skill.SkillID" name="skills" value="@skill.SkillID" />
+
+    }
+    <hr />
+    <!-- Submits your Form -->
+    <input type="submit" value="Search" />
+</form>

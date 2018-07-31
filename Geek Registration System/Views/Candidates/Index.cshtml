@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Geek_Registration_System.Models.Candidate>
+
+
+@{
+    var DBSkills = ViewBag.DBSkills;
+
+    ViewBag.Title = "Index";
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "searchResult",
+        InsertionMode = InsertionMode.Replace,
+
+    };
+}
+<h2>Skill List:</h2>
+@using (Ajax.BeginForm("SearchCandidate", "", FormMethod.Post, options))
+{
+    foreach (var skill in ViewBag.DBSkills)
+    {
+
+        @skill.Name <input type="checkbox" id="@skill.SkillID" name="skills" value="@skill.SkillID" />
+
+    }
+    <input type="submit" value="Search" />
+    <hr />
+}
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<h2>Candidate List:</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+<div id="searchResult">
+
+    @Html.Partial("_SearchResultView", Model)
+</div>
+
+
+
